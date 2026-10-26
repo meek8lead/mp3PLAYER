@@ -42,5 +42,5 @@ export default buildFigmaConfig({
     outputFile: path.resolve(dirname, "payload-types.ts"),
   },
   plugins: [mcpPlugin({})],
-  figma: {},
+  //figma: {},
 })
