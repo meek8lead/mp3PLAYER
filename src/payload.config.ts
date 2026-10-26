@@ -1,5 +1,6 @@
 import path from "path"
 import { buildConfig } from "payload"
+import { mongooseAdapter } from "@payloadcms/db-mongodb" // <-- ДОБАВИЛИ АДАПТЕР БД
 import { mcpPlugin } from "@payloadcms/plugin-mcp"
 import { en as adminLanguage } from "@payloadcms/translations/languages/en"
 import { fileURLToPath } from "url"
@@ -14,6 +15,10 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
+  // <-- ДОБАВИЛИ ЭТОТ БЛОК
+  db: mongooseAdapter({
+    url: process.env.DATABASE_URI || '',
+  }),
   admin: {
     user: Admins.slug,
     constrainWidth: true,
