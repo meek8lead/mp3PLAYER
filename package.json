@@ -13,6 +13,7 @@
     "payload": "NODE_OPTIONS=--no-deprecation payload"
   },
   "dependencies": {
+    "@payloadcms/db-sqlite": "4.0.0-beta.3",
     "@payloadcms/figma": "1.0.0-beta.1",
     "@payloadcms/next": "4.0.0-beta.3",
     "@payloadcms/plugin-cloud-storage": "4.0.0-beta.3",
