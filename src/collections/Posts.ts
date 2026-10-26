@@ -14,6 +14,7 @@ export const Posts: CollectionConfig = {
     {
       name: 'content',
       type: 'richText',
+      editor: lexicalEditor(),
     },
   ],
 }
