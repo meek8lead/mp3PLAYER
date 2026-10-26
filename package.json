@@ -1,0 +1,53 @@
+{
+  "name": "figma-make-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "NODE_OPTIONS=--no-deprecation next dev --port ${PORT:-3000} --hostname 0.0.0.0",
+    "build": "NODE_OPTIONS=--no-deprecation payload build",
+    "start": "NODE_OPTIONS=--no-deprecation next start",
+    "format": "oxfmt",
+    "generate:importmap": "NODE_OPTIONS=--no-deprecation payload generate:importmap",
+    "generate:types": "NODE_OPTIONS=--no-deprecation payload generate:types",
+    "payload": "NODE_OPTIONS=--no-deprecation payload"
+  },
+  "dependencies": {
+    "@payloadcms/figma": "1.0.0-beta.1",
+    "@payloadcms/next": "4.0.0-beta.3",
+    "@payloadcms/plugin-cloud-storage": "4.0.0-beta.3",
+    "@payloadcms/plugin-mcp": "4.0.0-beta.3",
+    "@payloadcms/richtext-lexical": "4.0.0-beta.3",
+    "@payloadcms/translations": "4.0.0-beta.3",
+    "@payloadcms/ui": "4.0.0-beta.3",
+    "graphql": "^16.8.1",
+    "html-react-parser": "^5.2.10",
+    "monaco-editor": "0.55.1",
+    "next": "16.4.0",
+    "payload": "4.0.0-beta.3",
+    "react": "19.2.1",
+    "react-dom": "19.2.1",
+    "sharp": "^0.35.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "oxfmt": "^0.2.0",
+    "postcss": "^8.5.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20.9.0",
+    "pnpm": "^9 || ^10"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild",
+      "unrs-resolver"
+    ]
+  }
+}
