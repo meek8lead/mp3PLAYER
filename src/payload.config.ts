@@ -1,4 +1,5 @@
 import path from "path"
+import { buildConfig } from "payload"
 import { mcpPlugin } from "@payloadcms/plugin-mcp"
 import { en as adminLanguage } from "@payloadcms/translations/languages/en"
 import { fileURLToPath } from "url"
@@ -8,12 +9,11 @@ import { Folders } from "./collections/Folders"
 import { Tags } from "./collections/Tags"
 import { Posts } from "./collections/Posts"
 import { MusicTracks } from "./collections/MusicTracks"
-import type { Config } from "payload"
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-const config: Config = {
+export default buildConfig({
   admin: {
     user: Admins.slug,
     constrainWidth: true,
@@ -42,6 +42,4 @@ const config: Config = {
     outputFile: path.resolve(dirname, "payload-types.ts"),
   },
   plugins: [mcpPlugin({})]
-}
-
-export default config
+})
