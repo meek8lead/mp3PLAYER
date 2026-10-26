@@ -1,6 +1,6 @@
 import path from "path"
 import { buildConfig } from "payload"
-import { mongooseAdapter } from "@payloadcms/db-mongodb" // <-- ДОБАВИЛИ АДАПТЕР БД
+import { sqliteAdapter } from "@payloadcms/db-sqlite" // <-- Простая база в файле
 import { mcpPlugin } from "@payloadcms/plugin-mcp"
 import { en as adminLanguage } from "@payloadcms/translations/languages/en"
 import { fileURLToPath } from "url"
@@ -15,9 +15,10 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
-  // <-- ДОБАВИЛИ ЭТОТ БЛОК
-  db: mongooseAdapter({
-    url: process.env.DATABASE_URI || '',
+  db: sqliteAdapter({
+    client: {
+      url: process.env.DATABASE_URI || 'file:./payload.db',
+    },
   }),
   admin: {
     user: Admins.slug,
