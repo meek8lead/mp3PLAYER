@@ -1,5 +1,4 @@
 import path from "path"
-import { buildFigmaConfig } from "@payloadcms/figma"
 import { mcpPlugin } from "@payloadcms/plugin-mcp"
 import { en as adminLanguage } from "@payloadcms/translations/languages/en"
 import { fileURLToPath } from "url"
